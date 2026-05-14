@@ -1,0 +1,17 @@
+NOTICE
+======
+
+EC327 (Summer 2026), Boston University.
+
+All material in this repository is authored by Jeffrey Carruthers
+<jbc@bu.edu> unless noted otherwise in an individual file's header.
+
+Dual license:
+
+- Source code (`*.cpp`, `*.h`, configuration files, scripts) — MIT License,
+  as set out in LICENSE. Each source file also carries an
+  SPDX-License-Identifier line.
+- Course documents (`*.md` handouts, lab specs, lecture notes) — Creative
+  Commons Attribution 4.0 International (CC BY 4.0).
+
+If you reuse or adapt this material, retain attribution.

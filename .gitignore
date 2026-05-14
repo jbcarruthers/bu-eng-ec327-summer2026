@@ -1,0 +1,43 @@
+# EC327 Summer 2026 — student repo .gitignore
+
+# macOS / editor noise
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# Object files, libraries, debug-symbol bundles
+*.o
+*.a
+*.so
+*.dylib
+*.dSYM/
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Compiled binaries — name yours and build into build/, or ignore explicitly
+a.out
+*.out
+
+# Coverage data
+*.gcov
+*.gcda
+*.gcno
+
+# Crash dumps
+core
+core.*
+
+# clangd / build-system caches
+.cache/
+compile_commands.json
+
+# Common build directories
+build/
+cmake-build-*/

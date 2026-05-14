@@ -1,0 +1,50 @@
+# EC327 Summer 2026 — clangd language-server configuration
+#
+# Lives at ec327/.clangd; clangd walks up the directory tree to find it,
+# so this applies to every C++ file under ec327/ (inclass/, assignments/,
+# all labs, all demos).
+#
+# Pairs with ec327/.clang-format (formatting) and ec327/.clang-tidy
+# (static analysis). clangd runs clang-tidy automatically when this file
+# is present, so red squiggles in the editor = same diagnostics the build
+# will produce.
+#
+# When/if labs switch to a build system that emits compile_commands.json
+# (CMake directly, or `bear -- make`), clangd prefers that; CompileFlags
+# below is the fallback for files not in any database (which covers all
+# single-file demos and lab starters).
+
+CompileFlags:
+  Compiler: clang++
+  Add:
+    - -std=c++20
+    - -Wall
+    - -Wextra
+    - -Wpedantic
+    - -Wshadow
+    # macOS-only defensive define: removes libc++ availability gates so
+    # students on older macOS (13.x / 14.x) can still use std::format,
+    # std::ranges, etc. that ship with newer libc++ but are marked
+    # "unavailable" via macOS deployment-target checks. No effect on Linux/WSL2.
+    - -D_LIBCPP_DISABLE_AVAILABILITY
+
+Diagnostics:
+  # In-editor noise suppression. The checks listed below catch real issues
+  # but fire at the wrong moment when students are typing -- e.g.,
+  # `#include <iostream>` is flagged "unused" the instant it's typed and
+  # before the `std::cout` line that uses it exists. They remain enabled
+  # in the project .clang-tidy, so `clang-tidy file.cpp` and a future
+  # `make check` still report them -- they just don't yell mid-keystroke.
+  UnusedIncludes: None          # clangd's native IWYU-style check
+  ClangTidy:
+    Remove:
+      - misc-include-cleaner    # clang-tidy's IWYU-style check
+
+InlayHints:
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
+
+Index:
+  Background: Build
+  StandardLibrary: true

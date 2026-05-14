@@ -1,0 +1,59 @@
+#cloud-config
+# EC327 Summer 2026 — Multipass cloud-init for Ubuntu 24.04
+# Used by Lab 0 to provision the C++ development VM in one shot.
+# Authored 2026-05-11.
+
+package_update: true
+
+packages:
+  # Core C++ toolchain (used from Lab 1 onward)
+  - build-essential
+  - clang
+  - clangd
+  - clang-format
+  - clang-tidy
+  - cmake
+  - ninja-build
+  - gdb
+  - valgrind
+  - pkg-config
+
+  # Version control (used in Lab 4)
+  - git
+
+  # Python (build scripts, the `claude` CLI, marimo if anyone wants it)
+  - python3
+  - python3-pip
+  - python3-venv
+
+  # Shell hygiene — students will live in this VM
+  - man-db
+  - manpages
+  - manpages-dev
+  - less
+  - file
+  - tmux
+  - vim-tiny
+  - tree
+  - htop
+  - curl
+  - wget
+  - zsh
+  - unzip
+
+runcmd:
+  - echo "==> Installing uv (fast Python package manager)"
+  - su - ubuntu -c "curl -LsSf https://astral.sh/uv/install.sh | sh"
+  - su - ubuntu -c "~/.local/bin/uv venv ~/.venv/ec327"
+  - echo "==> Auto-source the venv on login"
+  - echo 'source ~/.venv/ec327/bin/activate' >> /home/ubuntu/.bashrc
+  - echo "==> Set a friendly prompt prefix"
+  - echo 'export PS1="(ec327) \u@\h:\w\$ "' >> /home/ubuntu/.bashrc
+  - echo "==> Default C++ build flags for bare 'make foo' (no Makefile)"
+  - echo 'export CXX=g++' >> /home/ubuntu/.bashrc
+  - echo "export CXXFLAGS='-std=c++20 -Wall -Wextra -Wpedantic -Wshadow -O0 -g'" >> /home/ubuntu/.bashrc
+  - echo "==> 'tidy' wrapper — clang-tidy without the compilation-database boilerplate"
+  - echo 'tidy() { clang-tidy --quiet "$@" -- -std=c++20 -Wall -Wextra -Wpedantic -Wshadow; }' >> /home/ubuntu/.bashrc
+  - echo "==> Done. Toolchain ready."
+
+final_message: "EC327 VM provisioned. Run: multipass shell ec327"
