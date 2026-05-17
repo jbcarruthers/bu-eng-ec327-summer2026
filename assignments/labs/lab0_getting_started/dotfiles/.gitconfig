@@ -1,0 +1,30 @@
+# EC327 .gitconfig starter
+# IMPORTANT: edit [user] to fill in YOUR name and email before committing.
+
+[user]
+    name  = YOUR NAME HERE
+    email = you@bu.edu
+
+[init]
+    defaultBranch = main
+
+[push]
+    autoSetupRemote = true
+    default = simple
+
+[pull]
+    rebase = false
+
+[color]
+    ui = auto
+
+[core]
+    editor = vim
+
+[alias]
+    s  = status -sb
+    co = checkout
+    br = branch
+    ci = commit
+    last = log -1 HEAD
+    lg = log --oneline --graph --decorate -20

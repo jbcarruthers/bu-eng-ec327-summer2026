@@ -1,6 +1,9 @@
-// Copyright 2026 J. Carruthers <jbc@bu.edu>  ·  EC327 Summer 2026
+// Copyright 2026 J. Carruthers <jbc@bu.edu>
 // SPDX-License-Identifier: MIT
 // Purpose: smallest C++ program — verifies that the toolchain compiles and runs.
+// Topic: anatomy
+// Category: canonical
+// Lecture: lab0
 
 #include <iostream>
 

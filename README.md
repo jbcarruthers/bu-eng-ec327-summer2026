@@ -38,6 +38,28 @@ LSP-capable editor, and a first compile-and-run.
 - **[assignments/labs/lab0_getting_started/README.md](assignments/labs/lab0_getting_started/README.md)** — the walkthrough
 - [`hello.cpp`](assignments/labs/lab0_getting_started/hello.cpp) — the smoke-test program
 - [`ec327_setup.yaml`](assignments/labs/lab0_getting_started/ec327_setup.yaml) — Multipass cloud-init (macOS VM provisioning)
+- [`dotfiles/`](assignments/labs/lab0_getting_started/dotfiles/) — optional `.bashrc` / `.gitconfig` / `.vimrc` starter set
+
+### Lab 1 — Unix + first build *(week 2, graded)*
+
+Guided tour of the Unix shell, framed around the workflow you'll use every day:
+edit on the host, build and run in the Linux shell. Two short programs, one
+captured transcript submission.
+
+- **[assignments/labs/lab1_unix_first_build/lab1.md](assignments/labs/lab1_unix_first_build/lab1.md)** — the lab handout
+- [`poem.cpp`](assignments/labs/lab1_unix_first_build/poem.cpp), [`infinite.cpp`](assignments/labs/lab1_unix_first_build/infinite.cpp), [`CMakeLists.txt`](assignments/labs/lab1_unix_first_build/CMakeLists.txt) — starter source
+
+### Textbook *(draft, in progress)*
+
+The draft EC327 textbook lives at [`textbook/`](textbook/). Two editions and
+every C++ program named in the book:
+
+- [`EC327-week1-preview.pdf`](textbook/EC327-week1-preview.pdf) — chapters 1–3 only, the publishable subset (~40 pages)
+- [`EC327-textbook-draft.pdf`](textbook/EC327-textbook-draft.pdf) — full draft including stubs (~120 pages)
+- [`textbook/code/`](textbook/code/) — `.cpp` source for every program in the chapters (`quadratic0.cpp` through `grade_v5.cpp` today)
+
+The textbook is also served on the course website at
+<https://curl.bu.edu/ec327/summer2026/textbook>.
 
 ### Reference
 
