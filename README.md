@@ -36,6 +36,7 @@ Stand up your development environment: a Linux VM, the course toolchain, an
 LSP-capable editor, and a first compile-and-run.
 
 - **[assignments/labs/lab0_getting_started/README.md](assignments/labs/lab0_getting_started/README.md)** — the walkthrough
+- [`lab0_addenda.md`](assignments/labs/lab0_getting_started/lab0_addenda.md) — optional addenda: VS Code install, native-macOS fallback, WSL/Windows file navigation
 - [`hello.cpp`](assignments/labs/lab0_getting_started/hello.cpp) — the smoke-test program
 - [`ec327_setup.yaml`](assignments/labs/lab0_getting_started/ec327_setup.yaml) — Multipass cloud-init (macOS VM provisioning)
 - [`dotfiles/`](assignments/labs/lab0_getting_started/dotfiles/) — optional `.bashrc` / `.gitconfig` / `.vimrc` starter set

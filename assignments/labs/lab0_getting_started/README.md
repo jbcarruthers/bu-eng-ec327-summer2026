@@ -54,6 +54,8 @@ brew install --cask multipass
 
 If you don't have Homebrew yet: install it from <https://brew.sh> first (one command, takes a few minutes).
 
+> **Can't run Multipass at all?** A locked-down managed laptop, too little disk, or a too-old macOS can block it. There's a native-macOS fallback in **Addendum B** of [`lab0_addenda.md`](lab0_addenda.md) — but it's an escape hatch (you lose class parity and the VM's safety isolation), so try Multipass first and bring me the error if it won't launch.
+
 Then **download `ec327_setup.yaml` from the course website** (it also lives next to this file in the lab directory, but you don't have the repo yet). Save it somewhere you can find it — `~/Downloads` is fine for now. This is a *cloud-init* file: it tells the VM what to install the moment it boots, so you don't hand-install the toolchain.
 
 ### Windows — WSL2
@@ -123,7 +125,7 @@ This makes `~/ec327` on your Mac visible inside the VM at `/home/ubuntu/ec327`. 
 
 The first time you run this, Multipass may print `Enabling support for mounting` and spin for a few seconds — that's expected. The mount survives reboots, but Multipass occasionally forgets it after a full host reboot; if your files vanish from the VM side, just re-issue this command.
 
-> Windows users: skip this. Your WSL2 Ubuntu home directory is already accessible from Windows via `\\wsl$\Ubuntu-24.04\home\<your-vm-user>\` (paste that into File Explorer). Make `~/ec327` *inside* WSL2 (`mkdir -p ~/ec327` from the Ubuntu shell), and access it from Windows through that path.
+> Windows users: skip this. Your WSL2 Ubuntu home directory is already accessible from Windows via `\\wsl$\Ubuntu-24.04\home\<your-vm-user>\` (paste that into File Explorer). Make `~/ec327` *inside* WSL2 (`mkdir -p ~/ec327` from the Ubuntu shell), and access it from Windows through that path. Unsure which files are where — your Windows Documents/Desktop vs. your WSL home? **Addendum C** in [`lab0_addenda.md`](lab0_addenda.md) walks through finding one side from the other, and why your course files belong on the Linux side.
 
 ---
 
@@ -242,7 +244,7 @@ Alternative editors that work just as well — pick what you can be productive i
 - **CLion** — JetBrains' full C++ IDE. Heavy but excellent. Free for students with a `.edu` email via JetBrains' student program.
 - **Vim** / **Neovim** / **Emacs** — completely fine if you already use them. Set up via `coc-clangd` (Vim) or `lsp-mode` / `eglot` (Emacs).
 
-Detailed per-editor install steps live in [`admin/editor_setup.md`](../../../admin/editor_setup.md) — covers Mac (Homebrew LLVM, PATH setup) and Linux/WSL2, plus the Sublime / VSCode / CLion / Vim / Emacs specifics.
+Detailed per-editor install steps live in [`admin/editor_setup.md`](../../../admin/editor_setup.md) — covers Mac (Homebrew LLVM, PATH setup) and Linux/WSL2, plus the Sublime / VSCode / CLion / Vim / Emacs specifics. **New to VSCode?** [`lab0_addenda.md`](lab0_addenda.md) Addendum A is a click-by-click install walkthrough for Mac and Windows — do that first, then the clangd config in `editor_setup.md`.
 
 Open your chosen editor on `~/ec327/work/` (your work directory). Save files there; they appear instantly in the VM through the mount.
 
