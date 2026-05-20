@@ -1,6 +1,10 @@
-// Copyright 2026 J. Carruthers <jbc@bu.edu>  ·  EC327 Summer 2026
+// Copyright 2026 J. Carruthers <jbc@bu.edu>
 // SPDX-License-Identifier: MIT
 // Purpose: interactive data-structure designer — recursive Q&A walker that emits a C++ type expression.
+// Topic: decomposition
+// Category: demo
+// Lecture: L12
+// Origin: summer_2024/inclass/datastructures.cpp (modernized 2026)
 
 // Walks the user through type-design decisions and emits a C++ type
 // expression (e.g., std::vector<std::map<int, std::string>>). Used as
