@@ -6,6 +6,14 @@ By the end of this lab you'll have a Linux VM running on your laptop, the course
 
 There's nothing to submit. Lab 1 starts where this leaves off, so it's worth getting all the way to the green checkmark at the bottom before week 1. It's a hard prerequisite for Lab 1 — the first graded lab. Get it working before our first meeting if you possibly can; bring questions and unresolved errors to class.
 
+> **New — optional addenda.** Lab 0 now ships a companion page, [`lab0_addenda.md`](lab0_addenda.md), with three optional walkthroughs you don't need for the standard path:
+>
+> - **Addendum A** — a click-by-click VSCode install for Mac and Windows.
+> - **Addendum B** — a native-macOS fallback if Multipass won't run.
+> - **Addendum C** — finding your files across the Windows/WSL2 divide.
+>
+> If you read Lab 0 before these existed, this is where they live — the sections below also link to them in context.
+
 ---
 
 ## What you need
