@@ -50,6 +50,19 @@ captured transcript submission.
 - **[assignments/labs/lab1_unix_first_build/lab1.md](assignments/labs/lab1_unix_first_build/lab1.md)** — the lab handout
 - [`poem.cpp`](assignments/labs/lab1_unix_first_build/poem.cpp), [`infinite.cpp`](assignments/labs/lab1_unix_first_build/infinite.cpp), [`CMakeLists.txt`](assignments/labs/lab1_unix_first_build/CMakeLists.txt) — starter source
 
+### Homework 1 — Random Walks and the Central Limit Theorem *(due Thu 5/28, graded)*
+
+Build a Monte Carlo random-walk simulation in C++ and watch the Central Limit
+Theorem emerge from the data you generate. The first of four staggered
+homeworks; the spec is also served on the course website.
+
+- **[assignments/homeworks/hw1_random_walk/hw1.md](assignments/homeworks/hw1_random_walk/hw1.md)** — the assignment spec ([PDF](assignments/homeworks/hw1_random_walk/hw1.pdf))
+- [`Walker.h`](assignments/homeworks/hw1_random_walk/Walker.h), [`Walker.cpp`](assignments/homeworks/hw1_random_walk/Walker.cpp), [`Histogram.h`](assignments/homeworks/hw1_random_walk/Histogram.h), [`Histogram.cpp`](assignments/homeworks/hw1_random_walk/Histogram.cpp), [`hw1_main.cpp`](assignments/homeworks/hw1_random_walk/hw1_main.cpp), [`CMakeLists.txt`](assignments/homeworks/hw1_random_walk/CMakeLists.txt) — starter source (fill in the TODOs)
+- [`smoke_test.py`](assignments/homeworks/hw1_random_walk/smoke_test.py) — self-check before submitting; necessary, not sufficient
+
+HW2–HW4 release on a staggered schedule through the term and appear here as
+they post.
+
 ### Textbook *(draft, in progress)*
 
 The draft EC327 textbook lives at [`textbook/`](textbook/). Two editions and
