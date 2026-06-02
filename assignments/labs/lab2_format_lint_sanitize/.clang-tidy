@@ -1,0 +1,64 @@
+---
+# EC327 Summer 2026 — clang-tidy configuration
+#
+# Curated check set, not the firehose. Start tight, loosen as needed.
+# Pairs with .clang-format (formatting) and Google C++ Style Guide (the style
+# baseline). Hard course rule: `using namespace std;` is forbidden — caught
+# automatically by google-build-using-namespace below.
+
+Checks: >
+  -*,
+  google-*,
+  -google-runtime-references,
+  -google-readability-todo,
+  modernize-use-nullptr,
+  modernize-use-override,
+  modernize-use-nodiscard,
+  modernize-use-default-member-init,
+  modernize-use-equals-default,
+  modernize-use-equals-delete,
+  modernize-loop-convert,
+  modernize-make-unique,
+  modernize-make-shared,
+  modernize-redundant-void-arg,
+  bugprone-use-after-move,
+  bugprone-string-integer-assignment,
+  bugprone-suspicious-string-compare,
+  bugprone-narrowing-conversions,
+  bugprone-integer-division,
+  bugprone-not-null-terminated-result,
+  bugprone-misplaced-widening-cast,
+  bugprone-suspicious-semicolon,
+  misc-include-cleaner,
+  cppcoreguidelines-init-variables,
+  cppcoreguidelines-pro-type-member-init,
+  cppcoreguidelines-slicing,
+  performance-unnecessary-copy-initialization,
+  performance-for-range-copy,
+  performance-implicit-conversion-in-loop,
+  performance-inefficient-vector-operation,
+  performance-move-const-arg,
+  readability-redundant-smartptr-get,
+  readability-simplify-boolean-expr,
+  readability-redundant-string-init,
+  readability-string-compare,
+  readability-container-size-empty,
+  readability-redundant-control-flow
+
+# Deliberately NOT enabled (teaching reasons):
+#   modernize-use-auto              — students need to see types while learning
+#   modernize-use-trailing-return-type — *PPP* uses leading returns; only useful for templates
+#   modernize-pass-by-value         — subtle, can confuse at this level
+#   cppcoreguidelines-avoid-magic-numbers — too aggressive in pedagogical code
+#   readability-magic-numbers       — same
+#   readability-identifier-length   — flags `i`, `j`, `n` in loops; not helpful here
+
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+FormatStyle: file
+
+CheckOptions:
+  - key: readability-simplify-boolean-expr.ChainedConditionalReturn
+    value: 'true'
+  - key: modernize-loop-convert.MinConfidence
+    value: reasonable
