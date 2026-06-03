@@ -483,7 +483,9 @@ If the file is empty or only a few lines long, you didn't actually start
 
 ## What to submit
 
-A single zip or folder containing:
+Submissions are **a single `.zip` file**, uploaded at
+[`curl.bu.edu/ec327`](https://curl.bu.edu/ec327). The zip must contain these
+five files:
 
 1. **`lab1_transcript.txt`** — the full captured session, with your `# learned:`
    comment lines interleaved.
@@ -496,6 +498,27 @@ A single zip or folder containing:
    worked or didn't. "Used AI to explain `2>&1`, it gave a clear analogy
    I'd seen before — confirming, not learning new" is a valid entry. "Did
    not use AI" is also a valid entry.
+
+### Building and checking your zip
+
+A tiny helper, **`ec327_zip.py`**, ships in this lab folder. From the
+directory holding your five files:
+
+```bash
+python3 ec327_zip.py build lab1       # writes lab1_submission.zip + checks it
+python3 ec327_zip.py check lab1       # re-check an existing zip any time
+```
+
+`build` collects the required files, skips junk (`build/`, `a.out`, …), writes
+`lab1_submission.zip`, and prints a present/missing checklist so you can't
+forget a file. You can also zip by hand (right-click → Compress on macOS,
+Send to → Compressed folder on Windows, or `zip lab1_submission.zip <files>`
+in the shell) — the upload page only cares that it's a single valid `.zip`.
+The site shows the same checklist against the names *inside* your zip after
+you upload.
+
+> Upload **one `.zip`**, not loose files and not a `.tar.gz` — the uploader
+> rejects anything else.
 
 ---
 

@@ -272,7 +272,8 @@ This is the conceptual deliverable. The point of the entire homework lives here.
 
 # Required submission
 
-Submit a single zip / tarball containing:
+Submit **a single `.zip` file**, uploaded at
+[`curl.bu.edu/ec327`](https://curl.bu.edu/ec327), containing:
 
 | File | What it is |
 |---|---|
@@ -284,7 +285,22 @@ Submit a single zip / tarball containing:
 | `reflection.md` | Your 100-word reflection |
 | `ai_disclosure.md` | Your AI use disclosure (template below) |
 
-Do **not** submit the `build/` directory or any compiled binaries.
+Do **not** submit the `build/` directory or any compiled binaries. Upload
+**one `.zip`** — loose files and `.tar.gz` are rejected by the uploader.
+
+A helper, **`ec327_zip.py`**, ships in your starter package. From your project
+directory:
+
+```bash
+python3 ec327_zip.py build hw1       # writes hw1_submission.zip + checks it
+python3 ec327_zip.py check hw1       # re-check an existing zip
+```
+
+It bundles the required source files (and picks up `output.txt`,
+`reflection.md`, `ai_disclosure.md` if present), skips the `build/` directory,
+and prints a present/missing checklist. You can also zip by hand — the upload
+page only requires a single valid `.zip`, and shows the same checklist against
+the files *inside* it after you upload.
 
 ---
 
