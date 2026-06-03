@@ -1,0 +1,36 @@
+INSTRUCTIONS
+
+Answer the questions below by replacing each PLACEHOLDER answer with the
+real one. Include this completed file in your submission zip.
+
+Note: file line numbers begin at 1. The answers shown now are FAKE
+placeholders — replace them.
+
+QUESTIONS
+
+Q1. calclog.cpp prints garbage. Removing one word fixes it (it makes the
+    inner assignment write to the outer variable instead of a new one).
+    What is that one word, and what line is it on?
+
+    PLACEHOLDER_WORD
+    PLACEHOLDER_LINE
+
+Q2. In sheep, what is the largest value `i` reaches before the loop ends?
+
+    PLACEHOLDER_NUMBER
+
+Q3. fibonacci's sequence is off for positive input (it returns the wrong
+    Fibonacci number even when it doesn't crash). Which line contains the
+    mistake that shifts the sequence?
+
+    PLACEHOLDER_LINE
+
+Q4. In tichu, what is the name of the vector that is accessed out of its
+    range (the one whose `.at()` throws)?
+
+    PLACEHOLDER_NAME
+
+Q5. What is the last line of output that BOTH `tichu` and `tichu_brackets`
+    print before their behaviors diverge (one throws, the other does not)?
+
+    PLACEHOLDER_LINE_OF_OUTPUT
