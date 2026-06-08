@@ -11,7 +11,7 @@ By the end of this assignment you will
 - have turned a plain `struct` into a **class** with private data, a constructor, and `const`-correct member functions — the central new skill of week 2
 - understand **encapsulation** and the interface-vs-implementation distinction in code you wrote yourself
 - have **injected a dependency** (the random engine) instead of hiding it in global state — and seen why that makes your simulation reproducible and testable
-- have used the **`<algorithm>` / `<numeric>` library** to compute summary statistics, instead of the hand-rolled loops you wrote in HW1 — the "library check" reflex from Lecture 7
+- have used the **`<algorithm>` / `<numeric>` library** to compute summary statistics, instead of the hand-rolled loops you wrote in HW1 — the "library check" reflex covered in the **Lecture 7 handout** (*Loop Hygiene & the STL Algorithm Reflex*, on the In Class page under Lecture 7 — read it before Part 3)
 - have stored objects in a `std::vector` and processed them with **range-based `for`**, **structured bindings**, and **lambdas**
 - have **watched diffusion emerge from your own data**: a cloud of random walkers spreads out from the origin, and the typical distance grows like $\sqrt{t}$ — this is **Brownian motion**
 - have discovered that the histogram of *distance from the origin* is **not** a bell curve — it peaks *away* from zero — and be able to say why
@@ -26,7 +26,7 @@ AI use is expected and encouraged, per the course's AI-in-the-learning-loop poli
 
 ## Due date
 
-**Thursday, June 4, 2026, 11:59 PM** (end of L11).
+**Wednesday, June 10, 2026, 11:59 PM.** *(Extended from June 8: the STL "library check" material Part 3 relies on was originally a cancelled Lecture 7; it is now provided as the Lecture 7 handout, and the deadline was pushed to give you time to read it.)*
 
 ## Assignment value
 
@@ -131,7 +131,7 @@ class Walker2D {
 
 Two things are deliberately different from HW1:
 
-- **The data is `private`.** Callers reach the position through `x()` / `y()`, never by poking at the members. The accessors are `const` because asking a walker where it is does not move it. This is **encapsulation** — the class controls its own invariants.
+- **The data is `private`.** Callers reach the position through `x()` / `y()`, never by poking at the members. The accessors are `const` because asking a walker where it is does not move it. This is **encapsulation** — the class controls its own invariants. *(New to `const` member functions and why they matter? The **Classes II handout** — *Destructors, RAII & const-correctness*, on the In Class page under Lecture 6 — covers exactly this. Note it's not just style: Part 3's `const Walker2D&` lambda won't compile unless these accessors are `const`.)*
 - **`step` takes the random engine by reference** instead of hiding a `static` engine inside itself like HW1 did. This is **dependency injection**, and it matters: whoever owns the engine controls the randomness. Seed the engine the same way twice and you get the *same* walk twice — which is exactly what makes a random simulation reproducible and testable. (More on this in Part 5.)
 
 **Implement** the constructor, `step`, and the four accessors in `Walker2D.cpp`. For `step`, draw a number in $\{0, 1, 2, 3\}$ from the injected engine and map it to N/S/E/W.
@@ -193,7 +193,7 @@ Then, **in `hw2_main.cpp`**, compute three numbers over that vector:
 - the **mean-squared displacement** $\langle r^2 \rangle = \frac{1}{K} \sum_i r_i^2$,
 - the **maximum distance** any walker reached.
 
-> **Use the library this time.** In HW1 you wrote the mean as a hand-rolled accumulator loop, and the spec explicitly *forbade* `std::accumulate` so you would understand what the loop does. You have now had Lecture 7. **The ban is lifted.** Compute these with `std::accumulate` (from `<numeric>`) and `std::max_element` (from `<algorithm>`), using lambdas to pull `r_squared()` / `distance_from_origin()` out of each walker. Writing `std::accumulate(v.begin(), v.end(), 0.0, [](double acc, const Walker2D& w){ return acc + w.distance_from_origin(); })` *is* the skill here — naming the loop and reaching for the library version. Hand-rolled loops will not earn full credit on this part.
+> **Use the library this time.** In HW1 you wrote the mean as a hand-rolled accumulator loop, and the spec explicitly *forbade* `std::accumulate` so you would understand what the loop does. The **Lecture 7 handout** (*Loop Hygiene & the STL Algorithm Reflex*, on the In Class page) walks through exactly the `accumulate` / `max_element` / lambda mechanics this part needs — read it first. **The ban is now lifted.** Compute these with `std::accumulate` (from `<numeric>`) and `std::max_element` (from `<algorithm>`), using lambdas to pull `r_squared()` / `distance_from_origin()` out of each walker. Writing `std::accumulate(v.begin(), v.end(), 0.0, [](double acc, const Walker2D& w){ return acc + w.distance_from_origin(); })` *is* the skill here — naming the loop and reaching for the library version. Hand-rolled loops will not earn full credit on this part.
 
 Run with $K = 10, 100, 1000$, all at $N = 100$ steps, and print:
 
@@ -401,7 +401,7 @@ int bucket_of(int x, int width) {
 
 `histogram_distance` has no such trap — distances are $\ge 0$, so `static_cast<int>(d / width) * width` (with `width` as a `double` in the division) is enough. Watch the cast: you want to bin the *value*, then label the bucket by its lower edge.
 
-**The library-check reflex (Part 3).** The HW1 spec told you *not* to use `std::accumulate`. That ban was a one-time teaching device. From now on, when you find yourself writing a loop that sums, counts, finds a max, or transforms a range — **stop and ask whether the library already has it.** It almost always does. Lecture 7 was about exactly this: every well-shaped loop is an STL algorithm in disguise.
+**The library-check reflex (Part 3).** The HW1 spec told you *not* to use `std::accumulate`. That ban was a one-time teaching device. From now on, when you find yourself writing a loop that sums, counts, finds a max, or transforms a range — **stop and ask whether the library already has it.** It almost always does. The Lecture 7 handout is about exactly this: every well-shaped loop is an STL algorithm in disguise.
 
 ---
 

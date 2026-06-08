@@ -176,7 +176,7 @@ std::vector<int> run_trials(int K, int N);
 
 that runs K independent walkers, each for N steps starting at position 0, and returns a `vector` of K final positions.
 
-**In `hw1_main.cpp`**, compute the **mean** and the **sample variance** of the final positions using hand-written `for` loops (don't reach for `<algorithm>` yet — that's a Lecture 7 topic; the point here is to write the accumulator by hand).
+**In `hw1_main.cpp`**, compute the **mean** and the **sample variance** of the final positions using hand-written `for` loops (don't reach for `<algorithm>` yet — that's the topic of the Lecture 7 handout, lifted in HW2; the point here is to write the accumulator by hand).
 
 Recall:
 $$ \text{mean} = \frac{1}{K} \sum_{i=1}^{K} x_i \qquad \text{variance} = \frac{1}{K-1} \sum_{i=1}^{K} (x_i - \text{mean})^2 $$
@@ -399,7 +399,7 @@ int bucket_of(int x, int width) {
 
 (Test this. There may be a cleaner formulation.)
 
-**Library check** — by L7 you will learn that
+**Library check** — the Lecture 7 handout (and HW2) show that
 
 ```cpp
 double mean = std::accumulate(positions.begin(), positions.end(), 0.0) / positions.size();
