@@ -1,0 +1,10 @@
+# Python consumer-side dependencies for the HW3 test suite (test_interop.py).
+# These are the data-science libraries a downstream user would load your files
+# with. Install into your Python environment:
+#
+#     python3 -m pip install -r requirements.txt
+#
+# If a library is missing, the tests that need it are SKIPPED (not failed),
+# but a skipped format earns no credit. Full credit needs both present.
+numpy>=1.24
+pandas>=2.0

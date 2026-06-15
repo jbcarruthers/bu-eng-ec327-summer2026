@@ -1,0 +1,52 @@
+---
+Language: Cpp
+BasedOnStyle: Google
+Standard: c++20
+
+# Indentation and width
+IndentWidth: 2
+TabWidth: 2
+UseTab: Never
+ColumnLimit: 80
+
+# Brace placement: K&R / attached (Google default, explicit for clarity)
+BreakBeforeBraces: Attach
+
+# Pointer / reference alignment: left (matches Google, Stroustrup, modern C++)
+# Note: matters more for references than for raw pointers, since this course
+# defaults to modern smart pointers (see L11). The few raw-pointer declarations
+# in L10 demo code, and all `const Foo& x` references, render as `int* p` / `Foo& x`.
+PointerAlignment: Left
+ReferenceAlignment: Left
+DerivePointerAlignment: false
+
+# Short statements: be explicit, hide nothing
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortLambdasOnASingleLine: Inline
+
+# Includes: group, regroup, sort
+IncludeBlocks: Regroup
+SortIncludes: CaseSensitive
+
+# Spacing
+SpacesInAngles: Never
+SpaceAfterCStyleCast: false
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeParens: ControlStatements
+
+# Initializer lists
+Cpp11BracedListStyle: true
+
+# Leave comments alone — don't reflow long lines or join short consecutive
+# ones. This preserves structured metadata blocks (Purpose / Topic / Category
+# / Lecture) that would otherwise get mangled by ColumnLimit-driven rewrapping.
+ReflowComments: false
+
+# Line endings — pin to LF for cross-platform reproducibility
+DeriveLineEnding: false
+UseCRLF: false
