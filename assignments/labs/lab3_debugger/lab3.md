@@ -2,7 +2,7 @@
 
 **EC327 Summer 2026 · graded · 2 points**
 
-*Released 2026-06-03. Due Sun 2026-06-14 23:59; late window to Mon 2026-06-15 23:59.*
+*Released 2026-06-03. Due Wed 2026-06-17 23:59; late window to Thu 2026-06-18 23:59.*
 
 **Prerequisite: Lab 1 complete** (you can boot the VM, build a `.cpp` with
 `g++`, and capture a session). Labs 1 and 2 taught you to make code *build*,
