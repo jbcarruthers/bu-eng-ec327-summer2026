@@ -18,6 +18,14 @@ packages:
   - valgrind
   - pkg-config
 
+  # Unit-testing frameworks (Lecture 17). doctest is header-only; catch2 and
+  # libgtest-dev install link libraries; python3-pytest drives a compiled
+  # program as a black box.
+  - doctest-dev
+  - catch2
+  - libgtest-dev
+  - python3-pytest
+
   # Version control (used in Lab 4)
   - git
 

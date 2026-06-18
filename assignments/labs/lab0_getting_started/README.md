@@ -161,6 +161,7 @@ sudo apt update
 sudo apt install -y \
     build-essential clang clangd clang-format clang-tidy \
     cmake ninja-build gdb valgrind pkg-config git \
+    doctest-dev catch2 libgtest-dev python3-pytest \
     python3 python3-pip python3-venv \
     man-db manpages manpages-dev less file tmux vim-tiny tree htop \
     curl wget zsh unzip
