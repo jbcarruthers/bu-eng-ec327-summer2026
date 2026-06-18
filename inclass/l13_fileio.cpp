@@ -85,7 +85,7 @@ bool read_scores() {
   }
   if (count > 0) {
     std::cout << std::format("  {:<6} {:>6.1f}  (mean)\n", "avg",
-                             static_cast<double>(total) / count);
+                             static_cast<double>((total) / count));
   }
   return true;
 }
